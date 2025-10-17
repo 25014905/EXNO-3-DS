@@ -102,21 +102,48 @@ df
 
 <img width="1041" height="535" alt="image" src="https://github.com/user-attachments/assets/f548193c-7d31-47d9-9a28-a2b7900b35fb" />
 
-np.reciprocal(df["Moderate Positive Skew"])
-
 
 
 df.skew()
+
+<img width="392" height="128" alt="image" src="https://github.com/user-attachments/assets/466cf4ae-a92d-46ee-baef-3791ac1d8d12" />
+
 
 
 
 np.log(df["Highly Positive Skew"])
 
 
+<img width="650" height="305" alt="image" src="https://github.com/user-attachments/assets/f92f3e99-0379-4e9e-ab62-cd5724684dd5" />
+
 np.reciprocal(df["Highly Positive Skew"])
 
 
 <img width="740" height="302" alt="image" src="https://github.com/user-attachments/assets/da5f8dfd-2885-4a2f-9e30-38ab8de3b945" />
+
+np.reciprocal(df["Moderate Positive Skew"])
+
+<img width="667" height="302" alt="image" src="https://github.com/user-attachments/assets/403b14c7-b8f5-4e20-8ca0-ee718b014468" />
+
+
+np.square(df["Highly Positive Skew"])
+
+<img width="658" height="286" alt="image" src="https://github.com/user-attachments/assets/87731aab-d335-45ca-af4f-02d92fc0da07" />
+
+df["Highly Positive Skew_boxcox"],parameters=stats.boxcox(df["Highly Positive Skew"])
+df
+
+
+df["Moderate Negative Skew_yeojohnson"],parameters=stats.yeojohnson(df['Moderate Negative Skew'])
+from sklearn.preprocessing import QuantileTransformer
+
+qt=QuantileTransformer(output_distribution='normal')
+df["Moderate Negative Skew_1"]=qt.fit_transform(df[["Moderate Negative Skew"]])
+df
+
+
+
+
 
 
 # RESULT:
